@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #fefefe;
+  background-color: #ee13b7;
   font-family: Arial, Helvetica, sans-serif;
   /*logotipo do intagram*/
 }
@@ -55,7 +55,7 @@ body > main .page-title {
   text-align: center;
 }
 body > main .content {
-  display: flex;
+  display: flex 1;
 }
 body > main .content section {
   flex: 1;
