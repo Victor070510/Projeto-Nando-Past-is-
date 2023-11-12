@@ -6,31 +6,37 @@
 body{
     background-color:#fefefe;
     font-family: Arial, Helvetica, sans-serif;
+    min-height: 50vh;
+    margin: 0;
+
 
 
 
     >nav {
     
         text-align: center;
+        min-height: 30vh;
+        flex: 1;
     }
     
     
     /*logotipo do intagram*/
     
     >footer img{
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         text-align: center;
     }
     
     >footer {
         
       
-        background-color:#d3d3d3ed;
+        background-color:#fefefe;
         display: flex;
         justify-content: center;
         list-style-type: none;
-        margin: 5px;
+        margin: 1px;
+        font-size: 10px;
     
     }
     

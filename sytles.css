@@ -6,22 +6,27 @@
 body {
   background-color: #fefefe;
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 50vh;
+  margin: 0;
   /*logotipo do intagram*/
 }
 body > nav {
   text-align: center;
+  min-height: 30vh;
+  flex: 1;
 }
 body > footer img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   text-align: center;
 }
 body > footer {
-  background-color: rgba(211, 211, 211, 0.9294117647);
+  background-color: #fefefe;
   display: flex;
   justify-content: center;
   list-style-type: none;
-  margin: 5px;
+  margin: 1px;
+  font-size: 10px;
 }
 body > footer a {
   text-decoration: none;
