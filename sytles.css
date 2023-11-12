@@ -75,6 +75,7 @@ button {
 }
 
 table {
+  margin: 10px 10px;
   width: 100%;
   border-collapse: collapse;
 }
