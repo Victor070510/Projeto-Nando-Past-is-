@@ -296,3 +296,24 @@ footer{
 }
 
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  form {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+
+main {
+    width: 50%;
+    margin: 0 auto;
+  }

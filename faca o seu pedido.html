@@ -16,40 +16,36 @@
                 <img src="./img/logotipo.png">
                 </div>
         </header>
-       <h1>Preencha os dados para realizar o pedido</h1>
-        <div class="formulario_pedido">
 
-        <form class="row g-3">
-                <div class="col-md-6">
-                        <label for="inputNome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="inputNome">
-                </div>
-                <div class="col-md-6">
-                        <label for="inputAddress" class="form-label">Endereço</label>
-                        <input type="text" class="form-control" id="inputAddress">
-                </div>
-                <div class="col-12">
-                        <label for="inputPhone" class="form-label">Telefone de Contato</label>
-                        <input type="tel" class="form-control" id="inputPhone" placeholder="telefone de contato com DDD">
-                </div>
-                <div class="col-12">
-                        <label for="inputRetirada" class="form-label">Responsável Retirada</label>
-                        <input type="text" class="form-control" id="inputRetirada" placeholder="Quem irá receber o pedido">
-                </div>
-                <div class="col-md-4">
-                        <label for="inputFormaPagto" class="form-label">Forma Pagamento</label>
-                        <select id="inputFormaPagto" class="form-select">
-                                <option selected>Escolha...</option>
-                                <option>PIX</option>
-                                <option>Débito</option>
-                                <option>Crédito</option>
-                                <option>Dinheiro</option>
-                        </select>
-                </div>
+
+       <h1>Preencha os dados para realizar o pedido</h1>
+       
+       
+       <form id="myForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"><br><br>
+        
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco"><br><br>
+        
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone"><br><br>
+        
+        <label for="responsavel">Responsável para retirada:</label>
+        <input type="text" id="responsavel" name="responsavel"><br><br>
+        
+        <label for="formaPagamento">Forma de pagamento:</label>
+        <select id="formaPagamento" name="formaPagamento">
+          <option value="pix">escolha uma opção de pagamento</option>
+          <option value="pix">Pix</option>
+          <option value="debito">Débito</option>
+          <option value="credito">Crédito</option>
+          <option value="dinheiro">Dinheiro</option>
+        </select><br><br>
+        
                 <div class="col-12">
                         <a class="btn btn-outline-primary" href="cardapio.html" role="button">Avance para Carrinho</a>
-                       
-                </div>
+                 </div>
                
         </form>
         </div>
@@ -57,8 +53,8 @@
  <!--botão pra voltar a pagina inicial-->
  <a href="index.html" type="button" class="btn btn-primary">Voltar</button>
        
-       
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+       <script src="nando.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
         
 
