@@ -6,20 +6,20 @@ app = Flask(__name__)
 def index():
     return render_template('faca o seu pedido.html')
 
-@app.route('/submit', methods=['POST'])
-def submit():
-    data = {
-        'nome': request.form['nome'],
-        'endereco': request.form['endereco'],
-        'telefone': request.form['telefone'],
-        'responsavel': request.form['responsavel'],
-        'formaPagamento': request.form['formaPagamento']
-    }
+@app.route('/processar_formulario', methods=['POST'])
+def processar_formulario():
+    data = request.get_json()
     return jsonify(data)
 
-@app.route('/submitted')
-def submitted():
-    return render_template('submitted.html', **request.args)
+@app.route('/exibir_dados')
+def exibir_dados():
+    nome = request.args.get('nome')
+    endereco = request.args.get('endereco')
+    telefone = request.args.get('telefone')
+    responsavel = request.args.get('responsavel')
+    pagamento = request.args.get('pagamento')
+
+    return render_template('dados_pedidos.html', nome=nome, endereco=endereco, telefone=telefone, responsavel=responsavel, pagamento=pagamento)
 
 if __name__ == '__main__':
     app.run(debug=True)

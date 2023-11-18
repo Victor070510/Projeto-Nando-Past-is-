@@ -252,4 +252,14 @@ div div .BTIN {
   align-items: center;
   justify-content: center;
   display: flex;
+}
+
+.nesp {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.btv {
+  width: 60%;
+  margin: 0 auto;
 }/*# sourceMappingURL=sytles.css.map */
