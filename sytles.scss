@@ -284,10 +284,17 @@ aside{
   
   input[type="submit"] {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #e11822;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
+
+    
+    &:hover{
+      background: rgb(134, 44, 48)
+      ;
+    }
   }
   
   .hidden {
@@ -298,3 +305,13 @@ aside{
     font-size: 25px;
   }
   
+  .btcar{
+    text-align: right;
+    min-width: 50px 0;
+    
+  }
+
+  .bord{
+    width: 60%;
+    margin: 0 auto;
+  }
