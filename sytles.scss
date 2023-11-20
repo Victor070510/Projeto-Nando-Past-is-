@@ -172,41 +172,93 @@ aside{
   padding: 10px 0;
 }
 
-.remove{
-background: #ccc;
-padding: 1px 5px;
-justify-content: space-around;
-align-items: center;
-border-radius: 5px;
-}
-.remove{
-background: #ccc;
-padding: 0px 15px;
-justify-content: space-around;
-align-items: center;
-border-radius: 5px;
+.remove{ 
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+
+
+    &:hover{
+      background: rgb(134, 44, 48)
+      ;
+        }
+
+
 }
 
+
 .quantity{
-    background: #ccc;
-    padding: 0px 15px;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 5px;
-}
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+
+
+        }
+
 .add{
-    background: #ccc;
-    padding: 0px 15px;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 5px;
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+
+    &:hover{
+      background: rgb(134, 44, 48)
+      ;
+        }
 }
 .remove-item{
-  background: #ccc;
-  padding: 0px 15px;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 5px;
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+
+
+    &:hover{
+      background: rgb(134, 44, 48)
+      ;
+        }
 }
 
 
@@ -240,5 +292,9 @@ border-radius: 5px;
   
   .hidden {
     display: none;
+  }
+
+  .pro{
+    font-size: 25px;
   }
   
