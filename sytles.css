@@ -80,6 +80,7 @@ body > main .content {
 }
 
 .car {
+  border: 1px solid #ccc;
   text-align: center;
   width: 60%;
   margin: 0 auto;
@@ -138,6 +139,14 @@ aside .detalhesPedido .totp {
 }
 
 .add {
+  background: #ccc;
+  padding: 0px 15px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.remove-item {
   background: #ccc;
   padding: 0px 15px;
   justify-content: space-around;

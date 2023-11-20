@@ -63,4 +63,15 @@ botaoRemove.forEach((botao, index) => {
   });
 });
 
+// Adicione a funcionalidade de remoção do item
+const removeItemButtons = document.querySelectorAll('.remove-item');
+removeItemButtons.forEach((removeBtn, index) => {
+  removeBtn.addEventListener('click', () => {
+    pasteis[index].quantidade = 0;
+    atualizarQuantidade(pasteis[index], quantidades[index]);
+    atualizarDetalhesPedido();
+  });
+});
 
+// Inicializar o total ao carregar a página
+calcularTotal();

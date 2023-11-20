@@ -123,7 +123,7 @@ header img{
   }
 
   .car{
-    
+    border: 1px solid#ccc;
     text-align: center;
     width: 60%;
     margin: 0 auto;
@@ -200,6 +200,13 @@ border-radius: 5px;
     justify-content: space-around;
     align-items: center;
     border-radius: 5px;
+}
+.remove-item{
+  background: #ccc;
+  padding: 0px 15px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
 }
 
 
