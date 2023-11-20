@@ -212,12 +212,23 @@ select {
 }
 
 input[type=submit] {
-  padding: 10px 20px;
-  background-color: #e11822;
-  color: white;
-  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+input[type=submit]:hover {
+  background: rgb(134, 44, 48);
 }
 input[type=submit]:hover {
   background: rgb(134, 44, 48);
@@ -239,4 +250,24 @@ input[type=submit]:hover {
 .bord {
   width: 60%;
   margin: 0 auto;
+}
+
+.btlim {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+.btlim:hover {
+  background: rgb(134, 44, 48);
 }/*# sourceMappingURL=sytles.css.map */

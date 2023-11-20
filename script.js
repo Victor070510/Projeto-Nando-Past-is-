@@ -75,3 +75,68 @@ removeItemButtons.forEach((removeBtn, index) => {
 
 // Inicializar o total ao carregar a página
 calcularTotal();
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Recupera os dados do formulário armazenados localmente
+  const formData = JSON.parse(localStorage.getItem('formData'));
+
+  if (formData) {
+    // Exibe os dados do formulário na página do carrinho
+    document.getElementById('confirmName').textContent = formData.name;
+    document.getElementById('confirmAddress').textContent = formData.address;
+    document.getElementById('confirmPhone').textContent = formData.phone;
+    document.getElementById('confirmPickup').textContent = formData.pickup;
+    document.getElementById('confirmPayment').textContent = formData.payment;
+  }
+
+  // Lógica do carrinho aqui...
+
+  // Botão para limpar os dados do armazenamento local
+  document.getElementById('clearData').addEventListener('click', function() {
+    localStorage.removeItem('formData');
+  });
+});
+
+// ... (código existente)
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Recupera os dados do carrinho armazenados localmente
+  const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+
+  // Verifica se há dados no carrinho armazenados localmente
+  if (storedCartItems) {
+    pasteis.forEach((pastel, index) => {
+      // Define a quantidade de cada item do carrinho com base nos dados armazenados
+      pasteis[index].quantidade = storedCartItems[index].quantidade;
+      // Atualiza a visualização da quantidade na página
+      quantidades[index].textContent = storedCartItems[index].quantidade;
+    });
+
+    // Atualiza os detalhes do pedido ao carregar a página
+    atualizarDetalhesPedido();
+    // Calcula o total ao carregar a página
+    calcularTotal();
+  }
+
+  // ... (outro código)
+
+  // Botão para limpar os dados do carrinho armazenados localmente
+  document.getElementById('clearCart').addEventListener('click', function() {
+    // Limpa os dados do carrinho armazenados localmente
+    const emptyCart = Array(pasteis.length).fill({ nome: '', preco: 0.00, quantidade: 0 });
+    localStorage.setItem('cartItems', JSON.stringify(emptyCart));
+
+    // Atualiza a visualização do carrinho (limpa os itens exibidos na página)
+    quantidades.forEach((quantidade, index) => {
+      quantidade.textContent = '0';
+      pasteis[index].quantidade = 0;
+    });
+
+    // Atualiza os detalhes do pedido
+    atualizarDetalhesPedido();
+    // Calcula o total
+    calcularTotal();
+  });
+});
