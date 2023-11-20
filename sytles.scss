@@ -104,12 +104,6 @@ header img{
 
 
 
-.BTIN{
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
 
   
   .nesp{
@@ -129,6 +123,81 @@ header img{
   }
 
   .car{
+    
+    text-align: center;
     width: 60%;
     margin: 0 auto;
+    
+
   }
+
+
+aside{
+  .detalhesPedido{
+
+    
+    border: 1px solid#ccc;
+    background: #ddd;
+    text-align: center;
+
+ .tti{
+        text-align: center;
+        padding: 15px 20px;
+        font-size: px;
+        
+    }
+ 
+
+    .dtp{
+        border: 1px solid#ccc;
+        background: #ddd;
+        padding: 20px;
+        color: black;
+       text-align: left;
+       justify-content: left;
+       
+    }
+
+    .totp{
+        background: #ccc;
+        padding: 15px 20px;
+
+    }
+
+    }
+}
+
+.pastel{
+  margin: 20px 50px;
+  padding: 10px 0;
+}
+
+.remove{
+background: #ccc;
+padding: 1px 5px;
+justify-content: space-around;
+align-items: center;
+border-radius: 5px;
+}
+.remove{
+background: #ccc;
+padding: 0px 15px;
+justify-content: space-around;
+align-items: center;
+border-radius: 5px;
+}
+
+.quantity{
+    background: #ccc;
+    padding: 0px 15px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+}
+.add{
+    background: #ccc;
+    padding: 0px 15px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+}
