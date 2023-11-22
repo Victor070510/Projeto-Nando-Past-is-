@@ -65,6 +65,10 @@ h1{
   font-family: Arial, Helvetica, sans-serif;
 }
 
+h4{
+text-align: center;
+}
+
 header img{
   width: 300px;
   height: 300px;
@@ -79,16 +83,6 @@ header img{
 }
 
 
- > main{
-      background-color:white;
-      padding: 0 30px 30px;
-  
-      .page-title { 
-          font-size: 40px;
-          padding: 50px 0;
-          text-align: center;
-      }
-  
       
   .content{
   display: flex 1;
@@ -97,13 +91,6 @@ header img{
 
     }
   }
-
-}
-
-
-
-
-
 
 
 .nesp{
@@ -125,7 +112,7 @@ header img{
 .car{
   border: 1px solid#ccc;
   text-align: center;
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   
 
@@ -168,8 +155,8 @@ aside{
 }
 
 .pastel{
-margin: 20px 50px;
-padding: 10px 0;
+margin: 50px 50px;
+padding: 0px 0;
 }
 
 .remove{ 
@@ -377,7 +364,4 @@ input[type="submit"] {
       background: rgb(134, 44, 48)
       ;
         }
-}
-h4{
-  text-align: center;
 }
