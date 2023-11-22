@@ -8,7 +8,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 50vh;
   margin: 0;
-  /*logotipo do instagram*/
+  /*logotipo do intagram*/
 }
 body > nav {
   text-align: center;
@@ -274,4 +274,24 @@ input[type=submit]:hover {
 
 .dadsp {
   text-align: left;
+}
+
+.clearForm {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+.clearForm:hover {
+  background: rgb(134, 44, 48);
 }/*# sourceMappingURL=sytles.css.map */
