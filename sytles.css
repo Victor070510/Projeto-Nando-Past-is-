@@ -294,4 +294,8 @@ input[type=submit]:hover {
 }
 .clearForm:hover {
   background: rgb(134, 44, 48);
+}
+
+h4 {
+  text-align: center;
 }/*# sourceMappingURL=sytles.css.map */
