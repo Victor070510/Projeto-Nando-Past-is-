@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const clearFormButton = document.getElementById("clearForm");
   const clearCartButton = document.getElementById("clearCart");
   const totalElement = document.getElementById("total");
+  const enviarBackendButton = document.getElementById("enviarBackend");
+
   let total = 0;
 
   form.addEventListener("submit", function (event) {
@@ -101,5 +103,58 @@ document.addEventListener("DOMContentLoaded", function () {
     totalElement.textContent = "0.00";
     details.innerHTML = "";
   });
-});
+
+  enviarBackendButton.addEventListener("click", function () {
+    const formData = {
+      name: document.getElementById("name").value,
+      address: document.getElementById("address").value,
+      phone: document.getElementById("phone").value,
+      pickup: document.getElementById("pickup").value,
+      payment: document.getElementById("payment").value,
+      cartItems: [],
+      total: parseFloat(totalElement.textContent)
+    };
+
+    cartItems.forEach(function (cartItem) {
+      const itemName = cartItem.querySelector(".pro").textContent;
+      const itemQuantity = parseInt(cartItem.querySelector(".quantity").textContent);
+      const itemPrice = parseFloat(cartItem.querySelector(".pro").textContent.split("R$")[1]);
+
+      if (itemQuantity > 0) {
+        const itemDetails = {
+          name: itemName,
+          quantity: itemQuantity,
+          price: itemPrice
+        };
+        formData.cartItems.push(itemDetails);
+      }
+    });
+
+    fetch('http://seu-backend.com/sua-rota', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erro ao enviar os dados');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Resposta do backend:', data);
+      alert('Dados enviados com sucesso!');
+    })
+    .catch(error => {
+      console.error('Erro ao enviar os dados:', error);
+      alert('Erro ao enviar os dados para o backend.');
+    });
+  });
+
+    // Por enquanto, para simular o envio, apenas mostro os dados no console
+    console.log('Dados a serem enviados para o backend:', formData);
+    alert('Dados prontos para envio para o backend. Verifique o console.');
+  });
 
