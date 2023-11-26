@@ -1,16 +1,16 @@
 from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
-import pymysql
+import mysql.connector
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/nando_pasteis'
-db = SQLAlchemy(app)
-db.init_app(app)
+# Configurações do banco de dados MySQL
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    passwd="victor0705",
+    database="nando_pasteis"
+)
 
-@app.route('/', methods=['GET'])
-def index():
-    return jsonify({'message': 'Ping!'})
 @app.route('/sua-rota', methods=['POST'])
 def receber_dados():
     data = request.json  # Aqui você recebe os dados enviados pelo JavaScript
@@ -28,6 +28,4 @@ def receber_dados():
     return jsonify({'message': 'Dados inseridos no banco de dados com sucesso.'})
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=True)
