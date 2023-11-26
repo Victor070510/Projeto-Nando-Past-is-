@@ -1,44 +1,50 @@
 from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
+import mysql.connector
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/nando_pasteis'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+# Configurações do banco de dados
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="victor0705",
+    database="nando_pasteis"
+)
+cursor = db.cursor()
 
-class Pedido(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(100))
-    endereco = db.Column(db.String(200))
-    telefone = db.Column(db.String(20))
-    responsavel_retirada = db.Column(db.String(100))
-    forma_pagamento = db.Column(db.String(50))
-    total = db.Column(db.Float)
-
-@app.route('/', methods=['GET'])
-def index():
-    return jsonify({'message': 'Ping!'})
-
+# Rota para receber os dados do formulário e armazená-los no banco de dados
 @app.route('/sua-rota', methods=['POST'])
-def receber_dados():
-    if request.method == 'POST':
-        data = request.json
+def receber_pedido():
+    data = request.json
 
-        novo_pedido = Pedido(
-            nome=data['name'],
-            endereco=data['address'],
-            telefone=data['phone'],
-            responsavel_retirada=data['pickup'],
-            forma_pagamento=data['payment'],
-            total=data['total']
-        )
+    nome = data['name']
+    endereco = data['address']
+    telefone = data['phone']
+    responsavel_retirada = data['pickup']
+    forma_pagamento = data['payment']
+    total = data['total']
 
-        db.session.add(novo_pedido)
-        db.session.commit()
+    # Inserir informações na tabela pedidos
+    insert_pedido = "INSERT INTO pedidos (nome, endereco, telefone, responsavel_retirada, forma_pagamento, total) VALUES (%s, %s, %s, %s, %s, %s)"
+    pedido_values = (nome, endereco, telefone, responsavel_retirada, forma_pagamento, total)
+    cursor.execute(insert_pedido, pedido_values)
+    db.commit()
 
-        return jsonify({'message': 'Dados inseridos no banco de dados com sucesso.'})
+    pedido_id = cursor.lastrowid  # Obtém o ID do pedido inserido
+
+    # Inserir informações na tabela itens_carrinho
+    for item in data['cartItems']:
+        nome_produto = item['name']
+        quantidade = item['quantity']
+        preco_unitario = item['price']
+        total_item = quantidade * preco_unitario
+
+        insert_item_carrinho = "INSERT INTO itens_carrinho (id_pedido, nome_produto, quantidade, preco_unitario, total_item) VALUES (%s, %s, %s, %s, %s)"
+        item_values = (pedido_id, nome_produto, quantidade, preco_unitario, total_item)
+        cursor.execute(insert_item_carrinho, item_values)
+        db.commit()
+
+    return jsonify({'message': 'Pedido recebido e armazenado com sucesso!'})
 
 if __name__ == '__main__':
-    db.create_all()
     app.run(debug=True)
