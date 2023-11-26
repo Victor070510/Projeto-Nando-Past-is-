@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    fetch('http://seu-backend.com/sua-rota', {
+    fetch('http://localhost:5000/sua-rota', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -152,9 +152,4 @@ document.addEventListener("DOMContentLoaded", function () {
       alert('Erro ao enviar os dados para o backend.');
     });
   });
-
-    // Por enquanto, para simular o envio, apenas mostro os dados no console
-    console.log('Dados a serem enviados para o backend:', formData);
-    alert('Dados prontos para envio para o backend. Verifique o console.');
-  });
-
+});
