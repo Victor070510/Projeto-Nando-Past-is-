@@ -1,0 +1,195 @@
+* {
+  margin: 5px;
+  padding: 0;
+}
+
+body {
+  background-color: #fefefe;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 50vh;
+  margin: 0;
+}
+body h1, body h4, body h5 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body header {
+  text-align: center;
+}
+body header img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+body nav {
+  text-align: center;
+  min-height: 30vh;
+  flex: 1;
+}
+body footer {
+  background-color: #fefefe;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 1px;
+  font-size: 15px;
+  text-align: center;
+}
+body footer img {
+  width: 30px;
+  height: 30px;
+}
+body footer a {
+  text-decoration: none;
+  margin: 10px;
+  list-style-type: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+body .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body .nesp,
+body .btv,
+body .int,
+body .car,
+body .bord,
+body aside {
+  width: 60%;
+  margin: 0 auto;
+}
+body input[type=submit],
+body .btlim,
+body .clearForm {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+body input[type=submit]:hover,
+body .btlim:hover,
+body .clearForm:hover {
+  background: rgb(134, 44, 48);
+}
+body .remove,
+body .quantity,
+body .add,
+body .remove-item {
+  text-align: center;
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+body .remove:hover,
+body .quantity:hover,
+body .add:hover,
+body .remove-item:hover {
+  background: rgb(134, 44, 48);
+}
+body .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+body .container label {
+  display: block;
+  margin-bottom: 5px;
+}
+body .container input[type=text],
+body .container input[type=tel],
+body .container select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+body .container input[type=submit] {
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+body .container .hidden {
+  display: none;
+}
+body .container .pro {
+  font-size: 25px;
+}
+body .container .btcar {
+  text-align: right;
+  min-width: 50px;
+}
+body .container .dadsp {
+  text-align: left;
+}
+body .container .clearForm {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+body .container .clearForm:hover {
+  background: rgb(134, 44, 48);
+}
+@media only screen and (max-width: 768px) {
+  body header img {
+    max-width: 100%;
+  }
+  body .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  body .nesp,
+  body .btv,
+  body .int,
+  body .car,
+  body .bord,
+  body aside {
+    width: 90%;
+  }
+  body .remove,
+  body .quantity,
+  body .add,
+  body .remove-item,
+  body input[type=submit],
+  body .btlim,
+  body .clearForm {
+    width: 90%;
+    margin: 10px auto;
+  }
+}/*# sourceMappingURL=sytles.css.map */
