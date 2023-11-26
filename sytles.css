@@ -51,6 +51,9 @@ body .content {
   flex-wrap: wrap;
   justify-content: center;
 }
+body .pastel {
+  text-align: center;
+}
 body .nesp,
 body .btv,
 body .int,
@@ -59,6 +62,7 @@ body .bord,
 body aside {
   width: 60%;
   margin: 0 auto;
+  text-align: center;
 }
 body input[type=submit],
 body .btlim,
@@ -110,6 +114,9 @@ body .quantity:hover,
 body .add:hover,
 body .remove-item:hover {
   background: rgb(134, 44, 48);
+}
+body .container {
+  border-radius: 1px solid color;
 }
 body .container {
   max-width: 600px;
