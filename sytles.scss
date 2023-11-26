@@ -56,6 +56,14 @@ body {
     }
   }
 
+    .pro{
+      font-size: 24px;
+    }
+
+.info{
+  text-align: left;
+}
+
   .content {
     display: flex;
     flex-wrap: wrap;
@@ -81,6 +89,9 @@ body {
   
   }
 
+  .detalhesPedido{
+   
+  }
   
   input[type="submit"],
   .btlim,
