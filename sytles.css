@@ -46,6 +46,12 @@ body footer a {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
+body .pro {
+  font-size: 24px;
+}
+body .info {
+  text-align: left;
+}
 body .content {
   display: flex;
   flex-wrap: wrap;
