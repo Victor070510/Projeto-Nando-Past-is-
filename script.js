@@ -1,9 +1,8 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("myForm");
   const details = document.getElementById("detalhesPedido");
   const confirmation = document.getElementById("confirmation");
-  const clearFormButton = document.getElementById("clearFormButton");
+  const clearFormButton = document.getElementById("clearForm");
   const clearCartButton = document.getElementById("clearCart");
   const totalElement = document.getElementById("total");
   const enviarBackendButton = document.getElementById("enviarBackend");
@@ -88,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
           li.textContent = `${itemName} - Quantidade: ${itemQuantity} - Total: R$${totalItemPrice.toFixed(2)}`;
           details.appendChild(li);
         }
+        
       });
     }
   });
@@ -138,20 +138,10 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       body: JSON.stringify(formData)
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Erro ao enviar os dados');
-      }
-      return response.json();
+
+
     })
-    .then(data => {
-      console.log('Resposta do backend:', data);
-      alert('Dados enviados com sucesso!');
-    })
-    .catch(error => {
-      console.error('Erro ao enviar os dados:', error);
-      alert('Erro ao enviar os dados para o backend.');
-    });
-  });
-});
+
+ });
+
 
