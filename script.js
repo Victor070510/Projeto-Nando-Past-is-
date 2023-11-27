@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("myForm");
   const details = document.getElementById("detalhesPedido");
   const confirmation = document.getElementById("confirmation");
-  const clearFormButton = document.getElementById("clearForm");
+  const clearFormButton = document.getElementById("clearFormButton");
   const clearCartButton = document.getElementById("clearCart");
   const totalElement = document.getElementById("total");
   const enviarBackendButton = document.getElementById("enviarBackend");

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import mysql.connector
 
 app = Flask(__name__)
@@ -12,10 +12,10 @@ def conectar_banco():
     )
     return db
 
-# Rota para receber os dados do formulário e armazená-los no banco de dados
 @app.route('/pedido', methods=['GET', 'POST']) 
 def receber_pedido():
     if request.method == 'POST':
+        try:
             db = conectar_banco()
             cur = db.cursor()
 
@@ -34,7 +34,7 @@ def receber_pedido():
             cur.execute(insert_pedido, pedido_values)
             db.commit()
 
-            pedido_id = cur.lastrowid  # Obtém o ID do pedido inserido
+            pedido_id = cur.lastrowid
 
             # Inserir informações na tabela itens_carrinho
             for item in data['cartItems']:
@@ -51,9 +51,14 @@ def receber_pedido():
             cur.close()
             db.close()
 
-            return jsonify({'message': 'Pedido recebido e armazenado com sucesso!'})
-      
- 
+            return render_template('pedido.html', message='Pedido recebido e armazenado com sucesso!')
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
+
+    elif request.method == 'GET':
+        render_template('index.html', message='teste') 
+
+    return jsonify({'message': 'Método não permitido'}), 405
 
 if __name__ == '__main__':
     app.run(debug=True)
