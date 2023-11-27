@@ -79,5 +79,5 @@ Estamos criando um sistema para a pastelaria “Nando Pastéis”, onde os clien
 
 6. Os pedidos são armazenados em um banco de dados para serem contabilizados para a produção em uma plataforma e sistema de gerenciamento.
 
-
+https://docs.google.com/presentation/d/1GOaqAQW64hKbIl_zJApPDRv8eA7A2NyNthQsLMSGXng/edit#slide=id.p
 https://victor070510.github.io/Projeto-Nando-Past-is-/
