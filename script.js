@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("myForm");
   const details = document.getElementById("detalhesPedido");
   const confirmation = document.getElementById("confirmation");
-  const clearFormButton = document.getElementById("clearFormButton");
+  const clearFormButton = document.getElementById("clearForm");
   const clearCartButton = document.getElementById("clearCart");
   const totalElement = document.getElementById("total");
   const enviarBackendButton = document.getElementById("enviarBackend");
@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   clearFormButton.addEventListener("click", function () {
-    console.log("Botão de limpar formulário clicado!");
     form.reset();
     confirmation.classList.add("hidden");
   });
@@ -143,4 +142,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
- })
+});
+
