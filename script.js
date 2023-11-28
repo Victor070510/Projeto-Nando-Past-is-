@@ -1,146 +1,119 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("myForm");
-  const details = document.getElementById("detalhesPedido");
-  const confirmation = document.getElementById("confirmation");
-  const clearFormButton = document.getElementById("clearForm");
-  const clearCartButton = document.getElementById("clearCart");
-  const totalElement = document.getElementById("total");
-  const enviarBackendButton = document.getElementById("enviarBackend");
+// Função para remover um item do carrinho
+function removerItem(event) {
+  let currentItem = event.target.parentElement.parentElement;
+  let quantity = currentItem.querySelector('.quantity');
+  quantity.innerText = '0';
+  mostrarDetalhesPedido();
+}
 
+// Função para mostrar os detalhes do pedido
+function mostrarDetalhesPedido() {
+  // Lógica para obter os dados do formulário
+  let name = document.getElementById('name').value;
+  let address = document.getElementById('address').value;
+  let phone = document.getElementById('phone').value;
+  let pickup = document.getElementById('pickup').value;
+  let payment = document.getElementById('payment').value;
+
+  // Atualiza os detalhes do pedido
+  document.getElementById('confirmName').innerText = name;
+  document.getElementById('confirmAddress').innerText = address;
+  document.getElementById('confirmPhone').innerText = phone;
+  document.getElementById('confirmPickup').innerText = pickup;
+  document.getElementById('confirmPayment').innerText = payment;
+
+  // Lógica para atualizar o carrinho e calcular o total
+  let cartItems = document.querySelectorAll('.pastel');
   let total = 0;
+  let detalhesPedido = document.getElementById('detalhesPedido');
+  detalhesPedido.innerHTML = '';
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+  cartItems.forEach(item => {
+      let addButton = item.querySelector('.add');
+      let removeButton = item.querySelector('.remove');
+      let quantity = item.querySelector('.quantity');
+      let productName = item.querySelector('.pro').innerText.split(' - ')[0];
+      let itemPrice = parseFloat(item.querySelector('.pro').innerText.split('R$')[1]);
+      let itemQuantity = parseInt(quantity.innerText);
+      let itemTotal = itemQuantity * itemPrice;
 
-    const name = document.getElementById("name").value;
-    const address = document.getElementById("address").value;
-    const phone = document.getElementById("phone").value;
-    const pickup = document.getElementById("pickup").value;
-    const payment = document.getElementById("payment").value;
+      total += itemTotal;
 
-    if (name && address && phone && pickup && payment !== "escolha") {
-      alert("Seus dados foram preenchidos. Faça o seu pedido!");
-
-      document.getElementById("confirmName").textContent = name;
-      document.getElementById("confirmAddress").textContent = address;
-      document.getElementById("confirmPhone").textContent = phone;
-      document.getElementById("confirmPickup").textContent = pickup;
-      document.getElementById("confirmPayment").textContent = payment;
-
-      confirmation.classList.remove("hidden");
-      form.reset();
-    } else {
-      alert("Por favor, preencha todos os campos do formulário e selecione uma forma de pagamento!");
-    }
-  });
-
-  const cartItems = document.querySelectorAll(".pastel");
-
-  cartItems.forEach(function (item) {
-    const addButton = item.querySelector(".add");
-    const removeButton = item.querySelector(".remove");
-    const quantityElement = item.querySelector(".quantity");
-    const price = parseFloat(item.querySelector(".pro").textContent.split("R$")[1]);
-
-    addButton.addEventListener("click", function () {
-      let quantity = parseInt(quantityElement.textContent);
-      quantity++;
-      quantityElement.textContent = quantity;
-      updateTotal();
-    });
-
-    removeButton.addEventListener("click", function () {
-      let quantity = parseInt(quantityElement.textContent);
-      if (quantity > 0) {
-        quantity--;
-        quantityElement.textContent = quantity;
-        updateTotal();
-      }
-    });
-
-    item.querySelector(".remove-item").addEventListener("click", function () {
-      quantityElement.textContent = "0";
-      updateTotal();
-    });
-
-    function updateTotal() {
-      total = 0;
-      cartItems.forEach(function (cartItem) {
-        const itemQuantity = parseInt(cartItem.querySelector(".quantity").textContent);
-        const itemPrice = parseFloat(cartItem.querySelector(".pro").textContent.split("R$")[1]);
-        total += itemPrice * itemQuantity;
-      });
-      totalElement.textContent = total.toFixed(2);
-      updateDetails();
-    }
-
-    function updateDetails() {
-      details.innerHTML = "";
-      cartItems.forEach(function (cartItem) {
-        const itemName = cartItem.querySelector(".pro").textContent;
-        const itemQuantity = parseInt(cartItem.querySelector(".quantity").textContent);
-        const itemPrice = parseFloat(cartItem.querySelector(".pro").textContent.split("R$")[1]);
-
-        if (itemQuantity > 0) {
-          const li = document.createElement("li");
-          const totalItemPrice = itemPrice * itemQuantity;
-          li.textContent = `${itemName} - Quantidade: ${itemQuantity} - Total: R$${totalItemPrice.toFixed(2)}`;
-          details.appendChild(li);
-        }
-        
-      });
-    }
-  });
-
-  clearFormButton.addEventListener("click", function () {
-    form.reset();
-    confirmation.classList.add("hidden");
-  });
-
-  clearCartButton.addEventListener("click", function () {
-    cartItems.forEach(function (item) {
-      item.querySelector(".quantity").textContent = "0";
-    });
-    totalElement.textContent = "0.00";
-    details.innerHTML = "";
-  });
-
-  enviarBackendButton.addEventListener("click", function () {
-    const formData = {
-      name: document.getElementById("name").value,
-      address: document.getElementById("address").value,
-      phone: document.getElementById("phone").value,
-      pickup: document.getElementById("pickup").value,
-      payment: document.getElementById("payment").value,
-      cartItems: [],
-      total: parseFloat(totalElement.textContent)
-    };
-
-    cartItems.forEach(function (cartItem) {
-      const itemName = cartItem.querySelector(".pro").textContent;
-      const itemQuantity = parseInt(cartItem.querySelector(".quantity").textContent);
-      const itemPrice = parseFloat(cartItem.querySelector(".pro").textContent.split("R$")[1]);
-
+      // Atualiza a exibição dos itens no detalhe do pedido
       if (itemQuantity > 0) {
-        const itemDetails = {
-          name: itemName,
-          quantity: itemQuantity,
-          price: itemPrice
-        };
-        formData.cartItems.push(itemDetails);
+          let listItem = document.createElement('li');
+          listItem.innerText = `${productName} - Quantidade: ${itemQuantity} - Total: R$${itemTotal.toFixed(2)}`;
+          detalhesPedido.appendChild(listItem);
       }
-    });
+  });
 
-    fetch('cd ', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
+  // Atualiza o total
+  document.getElementById('total').innerText = total.toFixed(2);
+}
 
-
-    })
-
+// Event listeners para botões e formulário
+document.getElementById('myForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  mostrarDetalhesPedido();
 });
 
+let cartItems = document.querySelectorAll('.pastel');
+
+cartItems.forEach(item => {
+  let addButton = item.querySelector('.add');
+  let removeButton = item.querySelector('.remove');
+  let quantity = item.querySelector('.quantity');
+  let removeItemButton = item.querySelector('.remove-item');
+
+  addButton.addEventListener('click', function() {
+      let currentQuantity = parseInt(quantity.innerText);
+      currentQuantity++;
+      quantity.innerText = currentQuantity;
+      mostrarDetalhesPedido();
+  });
+
+  removeButton.addEventListener('click', function() {
+      let currentQuantity = parseInt(quantity.innerText);
+      if (currentQuantity > 0) {
+          currentQuantity--;
+          quantity.innerText = currentQuantity;
+          mostrarDetalhesPedido();
+      }
+  });
+
+  removeItemButton.addEventListener('click', removerItem);
+});
+
+document.getElementById('clearForm').addEventListener('click', function() {
+  document.getElementById('myForm').reset();
+  mostrarDetalhesPedido();
+});
+
+document.getElementById('clearCart').addEventListener('click', function() {
+  cartItems.forEach(item => {
+      item.querySelector('.quantity').innerText = '0';
+  });
+  mostrarDetalhesPedido();
+});
+
+document.getElementById('enviarBackend').addEventListener('click', function() {
+  // Lógica para enviar dados para o backend usando fetch
+  let formData = new FormData(document.getElementById('myForm'));
+
+  fetch('/pedido', {
+      method: 'POST',
+      body: formData
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Ocorreu um erro ao enviar o pedido.');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log('Pedido enviado com sucesso:', data);
+  })
+  .catch(error => {
+      console.error('Erro:', error);
+  });
+});
