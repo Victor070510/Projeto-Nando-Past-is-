@@ -54,7 +54,28 @@ function mostrarDetalhesPedido() {
 // Event listeners para botões e formulário
 document.getElementById('myForm').addEventListener('submit', function(event) {
   event.preventDefault();
+  let name = document.getElementById('name').value;
+  let address = document.getElementById('address').value;
+  let phone = document.getElementById('phone').value;
+  let pickup = document.getElementById('pickup').value;
+  let payment = document.getElementById('payment').value;
+
+  
+// Verifica se algum campo está vazio
+if (name === '' || address === '' || phone === '' || pickup === '' || payment === '') {
+  alert('Por favor, preencha todos os campos do formulário.');
+} else {
   mostrarDetalhesPedido();
+
+  // Verifica se o método de pagamento é válido
+  let validPaymentOptions = ['pix', 'dinheiro', 'crédito', 'débito'];
+  if (!validPaymentOptions.includes(payment)) {
+    alert('Opção de pagamento inválida. Escolha entre "pix", "dinheiro", "crédito" ou "débito".');
+  } else {
+    // Verifica se todos os campos estão preenchidos corretamente
+    alert('O formulário foi preenchido corretamente. Vá para o carrinho!');
+  }
+}
 });
 
 let cartItems = document.querySelectorAll('.pastel');
