@@ -1,4 +1,4 @@
-$mobile-width: 768px; // Define mobile breakpoint
+$mobile-width: 768px;
 
 * {
   margin: 5px;
@@ -11,250 +11,259 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 50vh;
   margin: 0;
+}
 
-  h1, h4, h5 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
- 
+h1,  h4, h5 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
 
-  }
+h2{
 
-  header {
-    text-align: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  transition: color 0.3s ease-in-out;
+  text-align: center;
+  border: 1px solid black; /* Adicionando borda preta */
+  border-radius: 5px; /* Arredondando as bordas */
+  background-color: #fff; /* Adicionando fundo branco */
+  margin: 0 10px;
+   margin-top: 20px;
+}
 
-    img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
 
-    }
-  }
 
-  nav {
-    text-align: center;
-    min-height: 30vh;
-    flex: 1;
-  }
 
-  footer {
-  
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 1px;
-    font-size: 15px;
-    text-align: center;
 
-    img {
-      width: 30px;
-      height: 30px;
-    }
+header {
+  text-align: center;
+}
 
-    a {
-      text-decoration: none;
-      margin: 10px;
-      list-style-type: none;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-    }
-  }
+header img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
 
-    .pro{
-      font-size: 24px;
-    }
+nav {
+  text-align: center;
+  min-height: 30vh;
+  flex: 1;
+}
 
-.info{
+
+
+.pro {
+  font-size: 24px;
+}
+
+.info {
   text-align: left;
 }
 
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .pastel{
-    text-align: center;
-  }
-
-
-  .nesp,
-  .btv,
-  .int,
-  .car,
-  .bord,
-  aside {
-    width: 60%;
-    margin: 0 auto;
-    
-   
-    text-align: center;
-  
-  }
-
-  .detalhesPedido{
-    border-radius: 1px solid black;
-  }
-  
-  input[type="submit"],
-  .btlim,
-  .clearForm {
-    display: block;
-    width: 100%;
-    margin: 10px auto;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #e11822;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background: rgb(134, 44, 48);
-    }
-  }
-
-
-  .remove,
-  .quantity,
-  .add,
-  .remove-item{
-    text-align: center;
-    display: inline-block;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #e11822;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-  
-  
-      &:hover{
-        background: rgb(134, 44, 48)
-        ;
-          }
-  }
-
-
-  .bord{
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-.container{
-  border-radius: 1px solid color;
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
 
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
+.pastel {
+  text-align: center;
+}
 
-    input[type="text"],
-    input[type="tel"],
-    select {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-    }
+.nesp, .btv, .int, .car, .bor, aside {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid black; /* Adicionando borda preta */
+  border-radius: 5px; /* Arredondando as bordas */
+  background-color: #fff; /* Adicionando fundo branco */
+}
 
-    input[type="submit"] {
-      text-align: center;
-      transition: background-color 0.3s ease;
-    }
+.detalhesPedido {
+  border: 1px solid black; /* Adicionando borda preta */
+  border-radius: 5px; /* Arredondando as bordas */
+  background-color: #fff; /* Adicionando fundo branco */
+}
+.totp {
+  background-color: #f9f9f9; /* Cor de fundo destacada */
+  padding: 10px; /* Espaçamento interno para destacar */
+  font-size: 20px; /* Aumento do tamanho da fonte */
+}
+.inte {
+  display: flex;
+  flex-direction: row; /* Alinha os botões em linha horizontal */
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  align-items: center; /* Alinha os botões verticalmente */
+}
 
-    .hidden {
-      display: none;
-    }
 
-    .pro {
-      font-size: 25px;
-    }
+input[type="submit"], .btlim, .clearForm,
+.remove, .quantity, .add, .remove-item {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
 
-    .btcar {
-      text-align: right;
-      min-width: 50px;
-    }
+.remove:hover, .quantity:hover, .add:hover, .remove-item:hover,
+input[type="submit"]:hover, .btlim:hover, .clearForm:hover {
+  background: rgb(134, 44, 48);
+}
 
-    .dadsp {
-      text-align: left;
-    }
+.bord {
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    .clearForm {
-      display: block;
-      width: 100%;
-      margin: 10px auto;
-      padding: 8px 16px;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      outline: none;
-      color: #fff;
-      background-color: #e11822;
-      border: none;
-      border-radius: 20px;
-      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
+.container {
+  max-width: 100px;
+  padding: 15px; 
+  margin: 0 auto; 
+  font-family: Arial, sans-serif;
+  background-color: #fff; /* Adicionando fundo branco ao formulário */
+  border: 1px solid black; /* Adicionando borda preta */
+  border-radius: 5px; /* Arredondando as bordas */
+}
 
-      &:hover {
-        background: rgb(134, 44, 48);
-      }
-    }
+.container label {
+  
+  display: block;
+  margin-bottom: 5px;
+}
+
+.container input[type="text"],
+.container input[type="tel"],
+.container select {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 8px;
+}
+
+.container input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e11822;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.container label,
+.container input[type="text"],
+.container input[type="tel"],
+.container select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.container input[type="submit"],
+.container .clearForm {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.container input[type="submit"]:hover,
+.container .clearForm:hover {
+  background: rgb(134, 44, 48);
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: $mobile-width) {
+  header img {
+    max-width: 100%;
   }
 
-  // Media query for mobile devices
-  @media only screen and (max-width: $mobile-width) {
-    header {
-      img {
-        max-width: 100%;
-      }
-    }
-
-    .content {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .nesp,
-    .btv,
-    .int,
-    .car,
-    .bord,
-    aside {
-      width: 90%;
-    }
-
-    .remove,
-    .quantity,
-    .add,
-    .remove-item,
-    input[type="submit"],
-    .btlim,
-    .clearForm {
-      width: 90%;
-      margin: 10px auto;
-    }
+  .content {
+    flex-direction: column;
+    align-items: center;
   }
+
+  .nesp, .btv, .int, .car, .bord, aside {
+    width: 90%;
+  }
+
+  .remove, .quantity, .add, .remove-item,
+  input[type="submit"], .btlim, .clearForm {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+/* CSS para a imagem */
+.center img {
+  width: 300px;
+  border-radius: 10px;
+
+  transition: transform 0.3s ease-in-out;
+}
+
+.center img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+footer a {
+  margin: 0 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+footer img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+footer a:hover img {
+  transform: scale(1.2);
 }

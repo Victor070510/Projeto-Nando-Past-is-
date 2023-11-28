@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 5px;
   padding: 0;
@@ -10,100 +11,90 @@ body {
   min-height: 50vh;
   margin: 0;
 }
-body h1, body h4, body h5 {
+
+h1, h4, h5 {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
 }
-body header {
+
+h2 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  transition: color 0.3s ease-in-out;
+  text-align: center;
+  border: 1px solid black; /* Adicionando borda preta */
+  border-radius: 5px; /* Arredondando as bordas */
+  background-color: #fff; /* Adicionando fundo branco */
+  margin: 0 10px;
+  margin-top: 20px;
+}
+
+header {
   text-align: center;
 }
-body header img {
+
+header img {
   width: 100%;
   max-width: 300px;
   height: auto;
 }
-body nav {
+
+nav {
   text-align: center;
   min-height: 30vh;
   flex: 1;
 }
-body footer {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  margin: 1px;
-  font-size: 15px;
-  text-align: center;
-}
-body footer img {
-  width: 30px;
-  height: 30px;
-}
-body footer a {
-  text-decoration: none;
-  margin: 10px;
-  list-style-type: none;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-}
-body .pro {
+
+.pro {
   font-size: 24px;
 }
-body .info {
+
+.info {
   text-align: left;
 }
-body .content {
+
+.content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-body .pastel {
+
+.pastel {
   text-align: center;
 }
-body .nesp,
-body .btv,
-body .int,
-body .car,
-body .bord,
-body aside {
+
+.nesp, .btv, .int, .car, .bor, aside {
   width: 60%;
   margin: 0 auto;
   text-align: center;
+  border: 1px solid black; /* Adicionando borda preta */
+  border-radius: 5px; /* Arredondando as bordas */
+  background-color: #fff; /* Adicionando fundo branco */
 }
-body .detalhesPedido {
-  border-radius: 1px solid black;
+
+.detalhesPedido {
+  border: 1px solid black; /* Adicionando borda preta */
+  border-radius: 5px; /* Arredondando as bordas */
+  background-color: #fff; /* Adicionando fundo branco */
 }
-body input[type=submit],
-body .btlim,
-body .clearForm {
-  display: block;
-  width: 100%;
-  margin: 10px auto;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #e11822;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+
+.totp {
+  background-color: #f9f9f9; /* Cor de fundo destacada */
+  padding: 10px; /* Espaçamento interno para destacar */
+  font-size: 20px; /* Aumento do tamanho da fonte */
 }
-body input[type=submit]:hover,
-body .btlim:hover,
-body .clearForm:hover {
-  background: rgb(134, 44, 48);
+
+.inte {
+  display: flex;
+  flex-direction: row; /* Alinha os botões em linha horizontal */
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  align-items: center; /* Alinha os botões verticalmente */
 }
-body .remove,
-body .quantity,
-body .add,
-body .remove-item {
-  text-align: center;
+
+input[type=submit], .btlim, .clearForm,
+.remove, .quantity, .add, .remove-item {
   display: inline-block;
   padding: 8px 16px;
   font-size: 14px;
@@ -119,54 +110,41 @@ body .remove-item {
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
-body .remove:hover,
-body .quantity:hover,
-body .add:hover,
-body .remove-item:hover {
+
+.remove:hover, .quantity:hover, .add:hover, .remove-item:hover,
+input[type=submit]:hover, .btlim:hover, .clearForm:hover {
   background: rgb(134, 44, 48);
 }
-body .bord {
+
+.bord {
   margin: 0 auto;
   padding: 20px;
 }
-body .container {
-  border-radius: 1px solid color;
-}
-body .container {
-  max-width: 600px;
+
+.container {
+  max-width: 100px;
+  padding: 15px;
   margin: 0 auto;
-  padding: 20px;
   font-family: Arial, sans-serif;
+  background-color: #fff; /* Adicionando fundo branco ao formulário */
+  border: 1px solid black; /* Adicionando borda preta */
+  border-radius: 5px; /* Arredondando as bordas */
 }
-body .container label {
+
+.container label {
   display: block;
   margin-bottom: 5px;
 }
-body .container input[type=text],
-body .container input[type=tel],
-body .container select {
+
+.container input[type=text],
+.container input[type=tel],
+.container select {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 6px;
+  margin-bottom: 8px;
 }
-body .container input[type=submit] {
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-body .container .hidden {
-  display: none;
-}
-body .container .pro {
-  font-size: 25px;
-}
-body .container .btcar {
-  text-align: right;
-  min-width: 50px;
-}
-body .container .dadsp {
-  text-align: left;
-}
-body .container .clearForm {
+
+.container input[type=submit] {
   display: block;
   width: 100%;
   margin: 10px auto;
@@ -184,33 +162,94 @@ body .container .clearForm {
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
-body .container .clearForm:hover {
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.container label,
+.container input[type=text],
+.container input[type=tel],
+.container select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.container input[type=submit],
+.container .clearForm {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.container input[type=submit]:hover,
+.container .clearForm:hover {
   background: rgb(134, 44, 48);
 }
+
+/* Media query for mobile devices */
 @media only screen and (max-width: 768px) {
-  body header img {
+  header img {
     max-width: 100%;
   }
-  body .content {
+  .content {
     flex-direction: column;
     align-items: center;
   }
-  body .nesp,
-  body .btv,
-  body .int,
-  body .car,
-  body .bord,
-  body aside {
+  .nesp, .btv, .int, .car, .bord, aside {
     width: 90%;
   }
-  body .remove,
-  body .quantity,
-  body .add,
-  body .remove-item,
-  body input[type=submit],
-  body .btlim,
-  body .clearForm {
+  .remove, .quantity, .add, .remove-item,
+  input[type=submit], .btlim, .clearForm {
     width: 90%;
     margin: 10px auto;
   }
+}
+/* CSS para a imagem */
+.center img {
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.center img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+footer a {
+  margin: 0 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+footer img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+footer a:hover img {
+  transform: scale(1.2);
 }/*# sourceMappingURL=sytles.css.map */
