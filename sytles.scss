@@ -123,33 +123,39 @@ input[type="submit"]:hover, .btlim:hover, .clearForm:hover {
   background: rgb(134, 44, 48);
 }
 
-.bord {
-  margin: 0 auto;
-  padding: 20px;
-}
+
 
 .container {
-  max-width: 100px;
-  padding: 15px; 
-  margin: 0 auto; 
+
+  width: 60%;
+  margin: 0 auto; /* Ajustando o preenchimento interno */
   font-family: Arial, sans-serif;
-  background-color: #fff; /* Adicionando fundo branco ao formulário */
-  border: 1px solid black; /* Adicionando borda preta */
-  border-radius: 5px; /* Arredondando as bordas */
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
-.container label {
-  
-  display: block;
-  margin-bottom: 5px;
+.container label,
+.container input[type="text"],
+.container input[type="tel"],
+.container select {
+  width: 60%;
+  margin: 0 auto;
+  width: calc(100% - 12px); /* Ajustando a largura dos campos */
+  padding: 6px; /* Ajustando o preenchimento */
+  margin-bottom: 8px; /* Ajustando a margem inferior */
+  font-size: 14px; /* Definindo o tamanho da fonte */
 }
 
 .container input[type="text"],
 .container input[type="tel"],
 .container select {
+  width: 60%;
+  margin: 0 auto;
   width: 100%;
   padding: 6px;
   margin-bottom: 8px;
+
 }
 
 .container input[type="submit"] {
