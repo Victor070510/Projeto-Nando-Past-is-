@@ -12,13 +12,7 @@ body {
   margin: 0;
 }
 
-h1, h4, h5 {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-}
-
-h2 {
+h2, h1, h3 h4, h5 {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
@@ -117,34 +111,12 @@ input[type=submit]:hover, .btlim:hover, .clearForm:hover {
 }
 
 .container {
-  width: 60%;
-  margin: 0 auto; /* Ajustando o preenchimento interno */
+  width: 20%; /* Reduzindo a largura do container */
+  margin: 50px auto; /* Ajustando o preenchimento interno */
   font-family: Arial, sans-serif;
   background-color: #fff;
   border: 1px solid black;
   border-radius: 5px;
-}
-
-.container label,
-.container input[type=text],
-.container input[type=tel],
-.container select {
-  width: 60%;
-  margin: 0 auto;
-  width: calc(100% - 12px); /* Ajustando a largura dos campos */
-  padding: 6px; /* Ajustando o preenchimento */
-  margin-bottom: 8px; /* Ajustando a margem inferior */
-  font-size: 14px; /* Definindo o tamanho da fonte */
-}
-
-.container input[type=text],
-.container input[type=tel],
-.container select {
-  width: 60%;
-  margin: 0 auto;
-  width: 100%;
-  padding: 6px;
-  margin-bottom: 8px;
 }
 
 .container input[type=submit] {
@@ -255,4 +227,28 @@ footer img {
 
 footer a:hover img {
   transform: scale(1.2);
+}
+
+/* Estilos para a div contendo as imagens */
+.centern {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Estilos para a galeria de imagens */
+.centern {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.centern img {
+  width: 280px;
+  height: auto;
+  margin: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.centern img:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=sytles.css.map */
