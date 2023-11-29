@@ -1,20 +1,31 @@
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
+import mysql.connector
+
 
 app = Flask(__name__)
 
-# Configurações do banco de dados
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'victor0705'
-app.config['MYSQL_DB'] = 'nando_pasteis'
+def conectar_banco():
+    try:
+        conexao = mysql.connector.connect(
+            database="nando_pasteis",
+            host="localhost",
+            user="root",
+            password="victor0705"
+        )
+        print("Conexão bem-sucedida!")
+        return conexao  # Retorna a conexão para ser usada
 
-mysql = MySQL(app)
+    except mysql.connector.Error as erro:
+        print(f"Erro ao conectar ao banco de dados: {erro}")
+        return None  # Retorna None em caso de erro
 
 # Rota para criar um pedido
-@app.route('/pedido', methods=['POST'])
+@app.route('/pedido', methods=['GET', 'POST'])
 def criar_pedido():
-    cur = mysql.connection.cursor()
+    conexao = conectar_banco()
+    cur = conexao.cursor()
+
     nome = request.json['nome']
     endereco = request.json['endereco']
     telefone = request.json['telefone']
@@ -22,7 +33,7 @@ def criar_pedido():
     forma_pagamento = request.json['forma_pagamento']
 
     cur.execute(
-        "INSERT INTO Pedidos (nome, endereco, telefone, responsavel_retirada, forma_pagamento) VALUES (%s, %s, %s, %s, %s)",
+        "INSERT INTO Pedidos (nome, endereco, telefone, responsavel_retirada, forma_pagamento) VALUES (%s, %s, %s, %s, %s);",
         (nome, endereco, telefone, responsavel_retirada, forma_pagamento)
     )
 
