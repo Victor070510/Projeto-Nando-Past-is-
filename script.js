@@ -10,6 +10,7 @@ function removerItem(event) {
 function mostrarDetalhesPedido() {
   // Lógica para obter os dados do formulário
   let name = document.getElementById('name').value;
+
   let address = document.getElementById('address').value;
   let phone = document.getElementById('phone').value;
   let pickup = document.getElementById('pickup').value;
@@ -49,6 +50,7 @@ function mostrarDetalhesPedido() {
 
   // Atualiza o total
   document.getElementById('total').innerText = total.toFixed(2);
+
 }
 
 // Event listeners para botões e formulário
