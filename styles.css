@@ -190,7 +190,18 @@ input[type=submit]:hover, .btlim:hover, .clearForm:hover {
   .nesp, .btv, .int, .car, .bord, aside {
     width: 90%;
   }
-  .remove, .quantity, .add, .remove-item,
+  .remove, .quantity, .add, .remove-item {
+    width: 40px; /* Tamanho para exibir como bolinhas */
+    height: 40px;
+    border-radius: 50%; /* Forma de bolinha */
+    margin: 5px; /* Espaçamento entre as bolinhas */
+    font-size: 16px; /* Tamanho do ícone ou texto dentro da bolinha */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centraliza horizontalmente o conteúdo */
+    line-height: 40px; /* Centraliza verticalmente o conteúdo */
+  }
   input[type=submit], .btlim, .clearForm {
     width: 90%;
     margin: 10px auto;
