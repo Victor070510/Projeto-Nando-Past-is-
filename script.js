@@ -10,7 +10,6 @@ function removerItem(event) {
 function mostrarDetalhesPedido() {
   // Lógica para obter os dados do formulário
   let name = document.getElementById('name').value;
-
   let address = document.getElementById('address').value;
   let phone = document.getElementById('phone').value;
   let pickup = document.getElementById('pickup').value;
@@ -30,30 +29,29 @@ function mostrarDetalhesPedido() {
   detalhesPedido.innerHTML = '';
 
   cartItems.forEach(item => {
-      let addButton = item.querySelector('.add');
-      let removeButton = item.querySelector('.remove');
-      let quantity = item.querySelector('.quantity');
-      let productName = item.querySelector('.pro').innerText.split(' - ')[0];
-      let itemPrice = parseFloat(item.querySelector('.pro').innerText.split('R$')[1]);
-      let itemQuantity = parseInt(quantity.innerText);
-      let itemTotal = itemQuantity * itemPrice;
+    let addButton = item.querySelector('.add');
+    let removeButton = item.querySelector('.remove');
+    let quantity = item.querySelector('.quantity');
+    let productName = item.querySelector('.pro').innerText.split(' - ')[0];
+    let itemPrice = parseFloat(item.querySelector('.pro').innerText.split('R$')[1]);
+    let itemQuantity = parseInt(quantity.innerText);
+    let itemTotal = itemQuantity * itemPrice;
 
-      total += itemTotal;
+    total += itemTotal;
 
-      // Atualiza a exibição dos itens no detalhe do pedido
-      if (itemQuantity > 0) {
-          let listItem = document.createElement('li');
-          listItem.innerText = `${productName} - Quantidade: ${itemQuantity} - Total: R$${itemTotal.toFixed(2)}`;
-          detalhesPedido.appendChild(listItem);
-      }
+    // Atualiza a exibição dos itens no detalhe do pedido
+    if (itemQuantity > 0) {
+      let listItem = document.createElement('li');
+      listItem.innerText = `${productName} - Quantidade: ${itemQuantity} - Total: R$${itemTotal.toFixed(2)}`;
+      detalhesPedido.appendChild(listItem);
+    }
   });
 
   // Atualiza o total
   document.getElementById('total').innerText = total.toFixed(2);
-
 }
 
-// Event listeners para botões e formulário
+// Event listener para formulário (submit)
 document.getElementById('myForm').addEventListener('submit', function(event) {
   event.preventDefault();
   let name = document.getElementById('name').value;
@@ -62,24 +60,23 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
   let pickup = document.getElementById('pickup').value;
   let payment = document.getElementById('payment').value;
 
-  
-// Verifica se algum campo está vazio
-if (name === '' || address === '' || phone === '' || pickup === '' || payment === '') {
-  alert('Por favor, preencha todos os campos do formulário.');
-} else {
-  mostrarDetalhesPedido();
-
-  // Verifica se o método de pagamento é válido
-  let validPaymentOptions = ['pix', 'dinheiro', 'crédito', 'débito'];
-  if (!validPaymentOptions.includes(payment)) {
-    alert('Opção de pagamento inválida. Escolha entre "pix", "dinheiro", "crédito" ou "débito".');
+  // Verifica se todos os campos estão preenchidos
+  if (name.trim() === '' || address.trim() === '' || phone.trim() === '' || pickup.trim() === '' || payment.trim() === '') {
+    console.log('Por favor, preencha todos os campos do formulário.');
   } else {
-    // Verifica se todos os campos estão preenchidos corretamente
-    alert('O formulário foi preenchido corretamente. Vá para o carrinho!');
+    mostrarDetalhesPedido();
+
+    // Verifica se o método de pagamento é válido
+    let validPaymentOptions = ['pix', 'dinheiro', 'crédito', 'débito'];
+    if (!validPaymentOptions.includes(payment)) {
+      console.log('Opção de pagamento inválida. Escolha entre "pix", "dinheiro", "crédito" ou "débito".');
+    } else {
+      console.log('O formulário foi preenchido corretamente. Vá para o carrinho!');
+    }
   }
-}
 });
 
+// Restante do código para funcionamento do carrinho e detalhes do pedido
 let cartItems = document.querySelectorAll('.pastel');
 
 cartItems.forEach(item => {
@@ -89,32 +86,27 @@ cartItems.forEach(item => {
   let removeItemButton = item.querySelector('.remove-item');
 
   addButton.addEventListener('click', function() {
-      let currentQuantity = parseInt(quantity.innerText);
-      currentQuantity++;
-      quantity.innerText = currentQuantity;
-      mostrarDetalhesPedido();
+    let currentQuantity = parseInt(quantity.innerText);
+    currentQuantity++;
+    quantity.innerText = currentQuantity;
+    mostrarDetalhesPedido();
   });
 
   removeButton.addEventListener('click', function() {
-      let currentQuantity = parseInt(quantity.innerText);
-      if (currentQuantity > 0) {
-          currentQuantity--;
-          quantity.innerText = currentQuantity;
-          mostrarDetalhesPedido();
-      }
+    let currentQuantity = parseInt(quantity.innerText);
+    if (currentQuantity > 0) {
+      currentQuantity--;
+      quantity.innerText = currentQuantity;
+      mostrarDetalhesPedido();
+    }
   });
 
   removeItemButton.addEventListener('click', removerItem);
 });
 
-document.getElementById('clearForm').addEventListener('click', function() {
-  document.getElementById('myForm').reset();
-  mostrarDetalhesPedido();
-});
-
 document.getElementById('clearCart').addEventListener('click', function() {
   cartItems.forEach(item => {
-      item.querySelector('.quantity').innerText = '0';
+    item.querySelector('.quantity').innerText = '0';
   });
   mostrarDetalhesPedido();
 });
@@ -126,20 +118,17 @@ document.getElementById('enviarBackend').addEventListener('click', function() {
   fetch('/pedido', {
       method: 'POST',
       body: formData
-  })
-  .then(response => {
+    })
+    .then(response => {
       if (!response.ok) {
-          throw new Error('Ocorreu um erro ao enviar o pedido.');
+        throw new Error('Ocorreu um erro ao enviar o pedido.');
       }
       return response.json();
-  })
-  .then(data => {
+    })
+    .then(data => {
       console.log('Pedido enviado com sucesso:', data);
-  })
-  .catch(error => {
+    })
+    .catch(error => {
       console.error('Erro:', error);
-  });
+    });
 });
-
-
-
